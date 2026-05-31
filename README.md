@@ -10,20 +10,22 @@
 
 # git-ctx
 
-**Version control for AI context rules** — track changes to your `.ai-rules.json` like Git.
+> Git, but for your AI context rules.
 
-`git-ctx` is a lightweight CLI that snapshots, diffs, and restores your AI context file so you can experiment with rules fearlessly. It brings a Git-like workflow (`init`, `commit`, `log`, `diff`, `status`, `checkout`) to the `.ai-rules.json` sitting in your project root — plus **stars**, **branches**, **tags**, **templates**, and **team collaboration** features.
+You tweak `.cursorrules` or `CLAUDE.md` to make the AI code better. Two hours later, the AI is generating garbage and you can't remember what you changed. Or your teammate asks "what rules are you using?" and you have to paste a blob of JSON into Slack.
 
-## Why?
+`git-ctx` fixes this: one command to **snapshot**, **compare**, and **roll back** your AI context file — without mixing into Git history.
 
-AI-assisted coding tools use a context file (`.cursorrules`, `.windsurfrules`, `.aidigest`, `CLAUDE.md`, etc.) to steer the assistant. As you tune these rules, you'll want to:
+```
+git-ctx init
+# edit .ai-rules.json ...
+git-ctx commit -m "added strict typing rules"
+# AI output got worse?
+git-ctx checkout -f 1
+# back to what worked. done.
+```
 
-- **Track** what changed and why
-- **Revert** when a rules change degrades output quality
-- **Compare** versions to understand what worked
-- **Share** rule iterations with your team
 
-`git-ctx` does exactly that, without polluting your main Git history.
 
 ## Installation
 
@@ -313,20 +315,22 @@ MIT — see [LICENSE](LICENSE).
 
 # git-ctx
 
-**AI 上下文规则的版本控制** —— 像 Git 一样追踪你的 `.ai-rules.json` 变更。
+> Git，但是给 AI 上下文规则用的。
 
-`git-ctx` 是一个轻量级命令行工具，可以快照、对比、恢复你的 AI 上下文文件，让你放心大胆地调整规则。它在项目根目录的 `.ai-rules.json` 上复刻了 Git 式工作流（`init`、`commit`、`log`、`diff`、`status`、`checkout`）—— 外加 **收藏（star）**、**分支（branch）**、**标签（tag）**、**模板（template）** 和 **团队协作** 功能。
+你反复调整 `.cursorrules` 或 `CLAUDE.md` 来让 AI 写出更好的代码。两小时后 AI 开始胡言乱语，你却忘了改过什么。或者同事问你「你用的什么规则配置？」你只能把一坨 JSON 粘贴到微信里。
 
-## 为什么需要它？
+`git-ctx` 解决的就是这个：**一条命令快照、对比、回滚**你的 AI 上下文文件，不污染项目 Git 历史。
 
-AI 辅助编码工具通过上下文文件（`.cursorrules`、`.windsurfrules`、`.aidigest`、`CLAUDE.md` 等）来引导助手行为。当你反复调整这些规则时，你会想要：
+```
+git-ctx init
+# 编辑 .ai-rules.json ...
+git-ctx commit -m "加上严格类型检查规则"
+# AI 输出变差了？
+git-ctx checkout -f 1
+# 回滚到好用的版本，搞定。
+```
 
-- **追踪** 改了什么、为什么改
-- **回滚** 当规则变更导致输出质量下降时
-- **对比** 不同版本，搞清楚哪个配置更好用
-- **分享** 规则迭代历史给团队成员
 
-`git-ctx` 专为此而生，不会污染你正经的 Git 提交记录。
 
 ## 安装
 
