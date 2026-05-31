@@ -1,0 +1,30 @@
+{
+  "project": "taskflow-api",
+  "techStack": [
+    "Python 3.12",
+    "FastAPI",
+    "SQLAlchemy 2.0 (async)",
+    "PostgreSQL 16",
+    "Redis"
+  ],
+  "codingStandards": [
+    "Use ruff (line length 100)",
+    "Type hints on all signatures",
+    "Pydantic v2 for schemas"
+  ],
+  "architectureDecisions": [
+    "Async SQLAlchemy via DI",
+    "Service layer between routes and repos",
+    "Config via pydantic-settings"
+  ],
+  "description": "REST API backend for project management SaaS",
+  "testingStrategy": {
+    "framework": "pytest + pytest-asyncio",
+    "coverageTarget": 85,
+    "conventions": [
+      "One test file per route",
+      "httpx.AsyncClient for integration",
+      "factory_boy for test data"
+    ]
+  }
+}

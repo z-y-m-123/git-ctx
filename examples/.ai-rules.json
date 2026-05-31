@@ -1,0 +1,43 @@
+{
+  "project": "taskflow-api",
+  "description": "REST API backend for the TaskFlow project management SaaS",
+  "techStack": [
+    "Python 3.12",
+    "FastAPI",
+    "SQLAlchemy 2.0 (async)",
+    "PostgreSQL 16",
+    "Redis",
+    "Docker"
+  ],
+  "codingStandards": [
+    "Use ruff for linting and formatting (line length 100)",
+    "All public functions must have docstrings (Google style)",
+    "Type hints required on all function signatures",
+    "Pydantic v2 models for all request/response schemas",
+    "One route per file in api/routes/",
+    "Database access only through repository pattern in db/repos/"
+  ],
+  "architectureDecisions": [
+    "Async SQLAlchemy sessions via FastAPI dependency injection",
+    "Service layer between routes and repositories for business logic",
+    "Background tasks via Celery + Redis (not FastAPI BackgroundTasks)",
+    "API versioning via URL prefix: /api/v1/",
+    "Config via pydantic-settings from environment variables only",
+    "Structured JSON logging via structlog"
+  ],
+  "testingStrategy": {
+    "framework": "pytest + pytest-asyncio",
+    "coverageTarget": 85,
+    "conventions": [
+      "One test file per route module",
+      "Use httpx.AsyncClient for integration tests",
+      "Factories via factory_boy for test data",
+      "CI fails if coverage drops below target"
+    ]
+  },
+  "apiConventions": {
+    "errors": "RFC 7807 Problem Details",
+    "pagination": "Cursor-based for lists over 100 items",
+    "naming": "camelCase in JSON, snake_case in Python"
+  }
+}

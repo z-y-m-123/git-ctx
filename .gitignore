@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Demo — generated files
+demo/.git-ctx/backup-*.json
+demo/git_ctx.py
+demo/.cursorrules
+demo/.windsurfrules
+demo/CLAUDE.md
+demo/.github/

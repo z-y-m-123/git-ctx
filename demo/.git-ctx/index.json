@@ -1,0 +1,30 @@
+{
+  "versions": [
+    {
+      "id": 1,
+      "timestamp": "2026-06-01T05:08:57",
+      "message": "init",
+      "file": "1.json",
+      "branch": "main"
+    },
+    {
+      "id": 2,
+      "timestamp": "2026-06-01T05:08:57",
+      "message": "add full project context",
+      "file": "2.json",
+      "branch": "main"
+    }
+  ],
+  "current": 2,
+  "tags": {
+    "production": 2
+  },
+  "stars": [],
+  "branches": {
+    "main": {
+      "current": 2
+    }
+  },
+  "currentBranch": "main",
+  "reviews": {}
+}
