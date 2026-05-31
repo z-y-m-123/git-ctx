@@ -1,7 +1,6 @@
 <div align="center">
 
-[![EN](https://img.shields.io/badge/lang-English-blue)](#english)
-[![中文](https://img.shields.io/badge/lang-中文-red)](#中文)
+**[English](#english) · [中文](#中文)**
 
 </div>
 
@@ -306,6 +305,10 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
+<p align="center"><b><a href="#中文">中文文档</a></b></p>
+
+---
+
 <a id="中文"></a>
 
 # git-ctx
@@ -602,6 +605,10 @@ git-ctx export -f cursor
 ## 许可证
 
 MIT —— 详见 [LICENSE](LICENSE)。
+
+---
+
+<p align="center"><b><a href="#english">English Documentation</a></b></p>
 
 ---
 
