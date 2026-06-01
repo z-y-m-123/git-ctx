@@ -45,7 +45,15 @@ After install, the `git-ctx` command is available globally.
 curl -fsSL https://raw.githubusercontent.com/z-y-m-123/git-ctx/main/install.sh | bash
 ```
 
-This copies `git_ctx.py` to `~/.local/bin/git-ctx`. Make sure `~/.local/bin` is in your `$PATH`.
+This downloads `git_ctx.py` from GitHub and installs it as `git-ctx`. If you run `./install.sh` from a local clone, it uses the local `git_ctx.py` instead. The installer prefers `/usr/local/bin` when writable, otherwise it uses `~/.local/bin`.
+
+Optional environment overrides:
+
+```bash
+GIT_CTX_INSTALL_DIR="$HOME/bin" bash install.sh
+GIT_CTX_REF="v0.2.0" bash install.sh
+GIT_CTX_SOURCE_URL="https://example.com/git_ctx.py" bash install.sh
+```
 
 ### Manual
 
@@ -77,6 +85,12 @@ git-ctx diff 1 2
 
 git-ctx checkout -f 1
 ```
+
+## Sharing With Git
+
+For personal experiments, add `.ai-rules.json` and `.git-ctx/` to your project's `.gitignore`.
+
+For team-shared context history, commit both `.ai-rules.json` and `.git-ctx/` to Git. Teammates can then inspect the shared history with `git-ctx log`, restore known-good versions with `git-ctx checkout`, and use `git-ctx branch` for context experiments.
 
 ## Commands
 
